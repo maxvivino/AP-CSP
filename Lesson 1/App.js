@@ -1,7 +1,7 @@
 
 // function setup() {
 //     createCanvas(windowHeight, windowWidth)
-//     background('lightgray')
+//     background('lightGray')
 
     
 //     createP('This was created in Javascript!')
