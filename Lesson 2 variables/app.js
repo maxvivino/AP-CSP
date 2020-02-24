@@ -17,3 +17,11 @@ console.log("Total Time: " + totalTime + " secs");
 console.log("---------------------------");
 let totalScore = (points * lives) / totalTime ;
 console.log("Your Total Score is: " + totalScore);
+
+console.log("Rolling Dice!")
+let someVal = Math.floor(Math.random() * 6) + 1
+let someOtherVal = Math.floor(Math.random() * 6) + 1
+const add = someOtherVal + someVal
+console.log("You rolled a: " + someVal)
+console.log("and a: " + someOtherVal)
+console.log("For a total of: " + add)
