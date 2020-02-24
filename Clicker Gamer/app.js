@@ -7,7 +7,7 @@ function setup() {
     bananaImg.size(200, 100);
     heading = createElement('h2', 'Click The Banana!');
     heading.position(width / 3, height / 4);
-    frameRate(4);
+    frameRate(2);
 }
 
 function draw(){
