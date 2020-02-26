@@ -1,6 +1,7 @@
 // Initialize Variables
 let scoreDisplay
 let scoreWarning
+let score = 0
 
 function setup() {
   createCanvas(windowWidth, windowHeight)
@@ -54,32 +55,41 @@ function setup() {
 function increaseScore() {
   // 3 items missing
 
+    score = score + 1
+    console.log(score)
+    scoreDisplay.html(score)
+    checkScore()
 
 
 }
 
 function decreaseScore() {
   // 3 items missing
-
-
+  score = score - 1
+  console.log(score)
+  scoreDisplay.html(score)
+  checkScore()
 
 }
 
 function checkScore() {
   // If score is between 0 and 10, inclusive, displays an empty string inside of the html
   // Because this function is called after every click, it will display nothing by default and only change if one of the conditions below is met.
-  scoreWarning.html(' ')
+  if(0 < score < 5) {
+  scoreWarning.html(' just right ')
   scoreWarning.style('color: inherit')
-
+  }
   // If score goes below 0, display a warning
-  if (score > 0) {
+  if (score < 0) {
+   
     scoreWarning.html('Too Small!')
     scoreWarning.style('color: red')
   }
 
   // If score goes above 10, display a warning
-  if (score < 5) {
+  if (score > 5) {
     scoreWarning.html('Too big!')
     scoreWarning.style('color: red')
   }
+  
 }
