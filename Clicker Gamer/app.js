@@ -3,6 +3,7 @@
   
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    background(100,100,500)
     bananaImg = createImg('banana.png', 'banana image');
     bananaImg.size(200, 100);
     heading = createElement('h2', 'Click The Banana!');
