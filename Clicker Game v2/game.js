@@ -13,16 +13,19 @@ let winningNum = 5
 function setup() {
   // Setup Canvas
   createCanvas(windowWidth, windowHeight)
-
+background(100,100,500)
 
   // Setup Lives Display
   livesDisplay = createElement('h4', 'LIVES: ' + lives)
-  livesDisplay.position(width / 20, height / 14)
+  livesDisplay.position(width / 3, height / 14)
 
 
   // Creates Difficulty Slider
+  
   const difficultyLabel = createElement('h4', 'DIFFICULTY')
-
+  difficultyLabel.position(width/20, height/14)
+  difficulty = createSlider(0, 360, 100);
+  difficulty.position(width/8.5, height/10.25)
 }
 
 function draw() {
