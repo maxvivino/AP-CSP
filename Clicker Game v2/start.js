@@ -1,8 +1,8 @@
 let button
-let
+
 function setup(){
   createCanvas(windowHeight,windowWidth)
-  background(220)
+  background(100,100,500)
   //Main text
   const heading = createElement('h1', 'Welcome to Banana Clicker!')
   heading.style('font-family: roboto')
