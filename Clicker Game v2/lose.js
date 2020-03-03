@@ -9,6 +9,10 @@ function setup(){
     heading.style('width: 100%')
     heading.style('top: 100px')
 
+    frownImg = createImg('frown.png', 'frown image');
+    frownImg.size(400, 400);
+    frownImg.position(windowWidth / 2.6 , windowHeight / 3.5)
+
   button=createButton('Try Again')
    
     button.mousePressed(goToLink)
