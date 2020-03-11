@@ -17,6 +17,14 @@ function setup() {
     // ADD CODE: Add 4 more additional topics
   )
 
+  addTopic(
+    'Number ',
+    'I once ate  ',
+    'sandwiches. I Never have had more before.',
+    false,
+    true,
+  )
+
   // Creates next button and styles it
   const outputDisplayBtn = createButton('NEXT')
   outputDisplayBtn.mousePressed(showOutputHandler)
@@ -61,6 +69,10 @@ function addTopic(topic, intro, detail, uppercase, num) {
       userInput = userInput
     }
 
+    if (num === true) {
+      userInput = Number(userInput)
+      userInput = ` ${userInput + 456}`
+    }
     // ADD CODE: CONVERT TO NUM
     // add if() statement that checks to see iff num === true.
     // if true, convert userInput to a number and perform some math on it
