@@ -8,11 +8,15 @@
 
 function setup() {
     let randButtonId
-    function checkCorrect (buttonId) {
-        console.log(`checking: ${buttonId}`)
-        setBoard()
+    function checkCorrect(buttonId){
+      console.log(`checking: ${buttonId}`)
+      if(buttonId == randButtonId ) {
+        console.log("You got it right!")
+    } else {
+        console.log("WRONG")
     }
-    
+      setBoard()
+    }
         setBoard()
     function setBoard() {
     let randButtonId = 1
@@ -45,7 +49,7 @@ function setup() {
     button3.style('background-color', color)
     button4.style('background-color', color) 
     //Randomizes where the different color button is
-    randButtonId = `button${Math.floor(random(1,5))}`
+    randButtonId = `button${Math.floor(random(1,4))}`
     select(`#${randButtonId}`).style('background-color', diffColor)
 
     console.log(`correct button is: ${randButtonId}`)
