@@ -5,9 +5,8 @@
 /* eslint-disable no-unused-vars */
 
 function setup() {
-
-let randButtonId = 1
 let currentPlayer = 1
+let randButtonId = 1
 let p1Score = 0
 let p2Score = 0
 
@@ -35,9 +34,18 @@ let p2Score = 0
         console.log("WRONG")
     }
       setBoard()
+      switchPlayer()
     }
-    
-  
+
+    function switchPlayer () {
+      if (currentPlayer == 1) {
+        currentPlayer = 2
+      } else {
+        currentPlayer = 1
+    }
+    console.log(`current player: ${currentPlayer}`)
+  }
+         
     //chooses random color
     let R = random(0,255)
     let G = random(0,255)
@@ -79,3 +87,11 @@ let p2Score = 0
 
   }
 }
+
+
+
+
+
+
+
+
