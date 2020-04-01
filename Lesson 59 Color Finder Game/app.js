@@ -55,9 +55,9 @@ function setBoard() {
     
     let color= `RGB(${R}, ${G}, ${B})`
     //makes different color 20 pixels different
-    G += 10
-    B += 10
-    R += 10
+    G += 20
+    B += 20
+    R += 20
     let diffColor = `RGB(${R}, ${G}, ${B})`
    
     //puts color to the buttons
@@ -97,6 +97,18 @@ function switchPlayer() {
         select('#player2').style('filter', 'opacity(20%)')
       }
       console.log(`current player: ${currentPlayer}`)
+    }
+
+    function checkP1Win(){
+      if(p1Score > 9){
+        window.location.href = 'P1win.html' 
+      }
+      function checkP2Win(){
+        if(p2Score > 9){
+          window.location.href = 'P2win.html' 
+
+        }
+      
     }
   }
 }
