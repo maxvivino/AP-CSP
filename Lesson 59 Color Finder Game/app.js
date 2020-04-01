@@ -20,31 +20,33 @@ const button4 = select('#button4')
 
 setBoard()
 function setBoard() {
-let randButtonId = 1
-let currentPlayer = 1
-let p1Score = 0
-let p2Score = 0
 
-    
     function checkCorrect(buttonId){
       console.log(`checking: ${buttonId}`)
       if(buttonId == randButtonId ) {
         console.log("You got it right!")
+        updateScoreBy(1)
     } else {
         console.log("WRONG")
+        updateScoreBy(-3)
     }
       setBoard()
       switchPlayer()
     }
 
-    function switchPlayer () {
-      if (currentPlayer == 1) {
-        currentPlayer = 2
-      } else {
-        currentPlayer = 1
+    function updateScoreBy(amt) {
+    if (currentPlayer === 1){
+      p1Score += amt
+    } else {
+      p2Score += amt
     }
-    console.log(`current player: ${currentPlayer}`)
+    console.log(`P1 score: ${p1Score}`)
+    console.log(`P2 score: ${p2Score}`)
+    p1ScoreDisplay.html(p1Score)
+    p2ScoreDisplay.html(p2Score)
   }
+    
+  
          
     //chooses random color
     let R = random(0,255)
@@ -53,9 +55,9 @@ let p2Score = 0
     
     let color= `RGB(${R}, ${G}, ${B})`
     //makes different color 20 pixels different
-    G += 20
-    B += 20
-    R += 20
+    G += 10
+    B += 10
+    R += 10
     let diffColor = `RGB(${R}, ${G}, ${B})`
    
     //puts color to the buttons
@@ -84,7 +86,18 @@ let p2Score = 0
     button4.mousePressed(function () {
         checkCorrect('button4')
       })
-
+function switchPlayer() {
+      if (currentPlayer === 1) {
+        currentPlayer = 2
+        select('#player1').style('filter', 'opacity(20%)')
+        select('#player2').style('filter', 'opacity(100%)')
+      } else {
+        currentPlayer = 1
+        select('#player1').style('filter', 'opacity(100%)')
+        select('#player2').style('filter', 'opacity(20%)')
+      }
+      console.log(`current player: ${currentPlayer}`)
+    }
   }
 }
 
