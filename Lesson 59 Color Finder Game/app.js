@@ -46,7 +46,19 @@ function setBoard() {
     p2ScoreDisplay.html(p2Score)
   }
     
-  
+  function checkGameOver() {
+    if (p1Score == 3 || p2Score == 3) {
+      // if anyone is over 3 points the game is over
+      select('.main').style('filter', 'opacity(20%)') // Fade screen
+      select('#winner-display').style('display', 'flex')
+      if (p1Score >= 3) {
+        // figure out who won and show the label
+        select('#player1WinText').show()
+      } else {
+        select('#player2WinText').show()
+      }
+    }
+  }
          
     //chooses random color
     let R = random(0,255)
@@ -86,6 +98,8 @@ function setBoard() {
     button4.mousePressed(function () {
         checkCorrect('button4')
       })
+
+      
 function switchPlayer() {
       if (currentPlayer === 1) {
         currentPlayer = 2
@@ -98,13 +112,8 @@ function switchPlayer() {
       }
       console.log(`current player: ${currentPlayer}`)
     }
-  }
+
+
+
 }
-
-
-
-
-
-
-
-
+}
